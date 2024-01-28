@@ -2,15 +2,16 @@ use std::io;
 
 fn main() {
     let mut x = String::new();
+    let mut y = String::new();
 
-    println!("Plese enter a value for x: ");
+    println!("Enter the first number: ");
+    io::stdin().read_line(&mut x).expect("Failed to read line");
+    let x: i32 = x.trim().parse().expect("Please type a number!");
 
-    io::stdin()
-        .read_line(&mut x)
-        .expect("Failed to read line");
+    println!("Enter the second number: ");
+    io::stdin().read_line(&mut y).expect("Failed to read line");
+    let y: i32 = y.trim().parse().expect("Please type a number!");
 
-    let x: i32 = x.trim().parse()
-        .expect("Please type a number!");
-
-    println!("Szevasz te!, {}", x);
+    let eredmény = x + y;
+    println!("Az eredménye az x-nek meg az y-nak összeadva: {}", eredmény);
 }
