@@ -4,11 +4,11 @@ fn main() {
     let mut x = String::new();
     let mut y = String::new();
 
-    println!("Enter the first number: ");
+    println!("Enter a number for x: ");
     io::stdin().read_line(&mut x).expect("Failed to read line");
     let x: i32 = x.trim().parse().expect("Please type a number!");
 
-    println!("Enter the second number: ");
+    println!("Enter a number for y: ");
     io::stdin().read_line(&mut y).expect("Failed to read line");
     let y: i32 = y.trim().parse().expect("Please type a number!");
 
