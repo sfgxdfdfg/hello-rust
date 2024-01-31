@@ -1,17 +1,31 @@
 use std::io;
 
-fn main() {
-    let mut x = String::new();
-    let mut y = String::new();
+fn hozzáadás(x: i32, y: i32) -> i32 {
+    x + y
+}
 
-    println!("Adj meg egy számot az x-nek: ");
+fn kivonás(x: i32, y: i32) -> i32 {
+    x - y
+}
+
+fn main() {
+    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (hozzáadás, kivonás):");
+    let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line");
     let x: i32 = x.trim().parse().expect("Please type a number!");
 
-    println!("Adj meg egy számot az y-nek: ");
+    let mut y = String::new();
     io::stdin().read_line(&mut y).expect("Failed to read line");
     let y: i32 = y.trim().parse().expect("Please type a number!");
 
-    let eredmény = x + y;
-    println!("Az eredménye az x-nek meg az y-nak összeadva: {}", eredmény);
+    let mut operation = String::new();
+    io::stdin().read_line(&mut operation).expect("Failed to read line");
+
+    let eredmény = match operation.trim() {
+        "hozzáadás" => hozzáadás(x, y),
+        "kivonás" => kivonás(x, y),
+        _=> panic!("Unknown operation"),
+    };
+
+    println!("Az eredmény: {}", eredmény);
 }
