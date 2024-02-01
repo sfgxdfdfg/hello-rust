@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Read};
 
 fn összeadás(x: i32, y: i32) -> i32 {
     x + y
@@ -28,4 +28,7 @@ fn main() {
     };
 
     println!("Az eredmény: {}", eredmény);
+    
+    println!("Nyomd meg az entert a kilépéshez!");
+    io::stdin().read(&mut [0]).unwrap();
 }
