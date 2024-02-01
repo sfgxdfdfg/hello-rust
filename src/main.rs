@@ -1,6 +1,6 @@
 use std::io;
 
-fn hozzáadás(x: i32, y: i32) -> i32 {
+fn összeadás(x: i32, y: i32) -> i32 {
     x + y
 }
 
@@ -9,7 +9,7 @@ fn kivonás(x: i32, y: i32) -> i32 {
 }
 
 fn main() {
-    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (hozzáadás, kivonás):");
+    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (összeadás, kivonás):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line");
     let x: i32 = x.trim().parse().expect("Please type a number!");
@@ -22,7 +22,7 @@ fn main() {
     io::stdin().read_line(&mut operation).expect("Failed to read line");
 
     let eredmény = match operation.trim() {
-        "hozzáadás" => hozzáadás(x, y),
+        "összeadás" => összeadás(x, y),
         "kivonás" => kivonás(x, y),
         _=> panic!("Unknown operation"),
     };
