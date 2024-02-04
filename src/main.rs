@@ -11,20 +11,20 @@ fn kivonás(x: i32, y: i32) -> i32 {
 fn main() {
     println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (összeadás, kivonás):");
     let mut x = String::new();
-    io::stdin().read_line(&mut x).expect("Failed to read line");
-    let x: i32 = x.trim().parse().expect("Please type a number!");
+    io::stdin().read_line(&mut x).expect("Nem sikerült beolvasni a sort!");
+    let x: i32 = x.trim().parse().expect("Egy számot adj meg!");
 
     let mut y = String::new();
-    io::stdin().read_line(&mut y).expect("Failed to read line");
-    let y: i32 = y.trim().parse().expect("Please type a number!");
+    io::stdin().read_line(&mut y).expect("Nem sikerült beolvasni a sort!");
+    let y: i32 = y.trim().parse().expect("Egy számot adj meg!");
 
     let mut operation = String::new();
-    io::stdin().read_line(&mut operation).expect("Failed to read line");
+    io::stdin().read_line(&mut operation).expect("Nem sikerült beolvasni a sort!");
 
     let eredmény = match operation.trim() {
         "összeadás" => összeadás(x, y),
         "kivonás" => kivonás(x, y),
-        _=> panic!("Unknown operation"),
+        _=> panic!("Ismeretlen operáció!"),
     };
 
     println!("Az eredmény: {}", eredmény);
