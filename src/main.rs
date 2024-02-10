@@ -17,7 +17,20 @@ fn subtraction(x: i32, y: i32) -> i32 {
 }
 
 fn main() {
-    println!("Type in a value for x, then for y, and finally for the operation (addition, subtraction):");
+    let mut language = String::new();
+    println!("Type in the language you want to use (english, hungary):");
+    io::stdin().read_line(&mut language).expect("Failed to read line!");
+    
+    match language.trim() {
+        "english" => english(),
+        "hungary" => hungary(),
+        _=> panic!("Unknown language!"),
+    
+    }
+}
+
+fn english() {
+    println!("Type in a value for x, then for y, and finally for the operation (+, -):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line!");
     let x: i32 = x.trim().parse().expect("Please type a number!");
@@ -30,20 +43,19 @@ fn main() {
     io::stdin().read_line(&mut operation).expect("Failed to read line!");
 
     let eredmény = match operation.trim() {
-        "addition" => addition(x, y),
-        "subtraction" => subtraction(x, y),
+        "+" => addition(x, y),
+        "-" => subtraction(x, y),
         _=> panic!("Unkonwn operation!"),
     };
 
     println!("The result: {}", eredmény);
 
-    let function_pointer: fn() = hungary;
-
-    function_pointer();
+    println!("Press enter to exit!");
+    io::stdin().read(&mut [0]).unwrap();
 }
 
 fn hungary() {
-    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (összeadás, kivonás):");
+    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Nem sikerült beolvasni a sort!");
     let x: i32 = x.trim().parse().expect("Egy számot adj meg!");
@@ -56,13 +68,13 @@ fn hungary() {
     io::stdin().read_line(&mut operation).expect("Nem sikerült beolvasni a sort!");
 
     let eredmény = match operation.trim() {
-        "összeadás" => összeadás(x, y),
-        "kivonás" => kivonás(x, y),
+        "+" => összeadás(x, y),
+        "-" => kivonás(x, y),
         _=> panic!("Ismeretlen operáció!"),
     };
 
     println!("Az eredmény: {}", eredmény);
 
-    println!("Press enter to exit!/Nyomd meg az entert a kilépéshez!");
+    println!("Nyomd meg az entert a kilépéshez!");
     io::stdin().read(&mut [0]).unwrap();
 }
