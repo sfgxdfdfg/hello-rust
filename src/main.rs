@@ -1,13 +1,5 @@
 use std::io::{self, Read};
 
-fn összeadás(x: i32, y: i32) -> i32 {
-    x + y
-}
-
-fn kivonás(x: i32, y: i32) -> i32 {
-    x - y
-}
-
 fn addition(x: i32, y: i32) -> i32 {
     x + y
 }
@@ -18,12 +10,12 @@ fn subtraction(x: i32, y: i32) -> i32 {
 
 fn main() {
     let mut language = String::new();
-    println!("Type in the language you want to use (english, hungary):");
+    println!("Type in the language you want to use (1-english, 2-hungary):");
     io::stdin().read_line(&mut language).expect("Failed to read line!");
     
     match language.trim() {
-        "english" => english(),
-        "hungary" => hungary(),
+        "1" => english(),
+        "2" => hungary(),
         _=> panic!("Unknown language!"),
     
     }
@@ -68,8 +60,8 @@ fn hungary() {
     io::stdin().read_line(&mut operation).expect("Nem sikerült beolvasni a sort!");
 
     let eredmény = match operation.trim() {
-        "+" => összeadás(x, y),
-        "-" => kivonás(x, y),
+        "+" => addition(x, y),
+        "-" => subtraction(x, y),
         _=> panic!("Ismeretlen operáció!"),
     };
 
