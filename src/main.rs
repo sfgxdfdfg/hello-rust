@@ -1,10 +1,10 @@
 use std::io::{self, Read};
 
-fn addition(x: i32, y: i32) -> i32 {
+fn addition(x: i64, y: i64) -> i64 {
     x + y
 }
 
-fn subtraction(x: i32, y: i32) -> i32 {
+fn subtraction(x: i64, y: i64) -> i64 {
     x - y
 }
 
@@ -25,16 +25,16 @@ fn english() {
     println!("Type in a value for x, then for y, and finally for the operation (+, -):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line!");
-    let x: i32 = x.trim().parse().expect("Please type a number!");
+    let x: i64 = x.trim().parse().expect("Please type a number!");
 
     let mut y = String::new();
     io::stdin().read_line(&mut y).expect("Failed to read line!");
-    let y: i32 = y.trim().parse().expect("Please type a number!");
+    let y: i64 = y.trim().parse().expect("Please type a number!");
 
     let mut operation = String::new();
     io::stdin().read_line(&mut operation).expect("Failed to read line!");
 
-    let eredmény = match operation.trim() {
+    let eredmény: i64 = match operation.trim() {
         "+" => addition(x, y),
         "-" => subtraction(x, y),
         _=> panic!("Unkonwn operation!"),
@@ -50,16 +50,16 @@ fn hungary() {
     println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Nem sikerült beolvasni a sort!");
-    let x: i32 = x.trim().parse().expect("Egy számot adj meg!");
+    let x: i64 = x.trim().parse().expect("Egy számot adj meg!");
 
     let mut y = String::new();
     io::stdin().read_line(&mut y).expect("Nem sikerült beolvasni a sort!");
-    let y: i32 = y.trim().parse().expect("Egy számot adj meg!");
+    let y: i64 = y.trim().parse().expect("Egy számot adj meg!");
 
     let mut operation = String::new();
     io::stdin().read_line(&mut operation).expect("Nem sikerült beolvasni a sort!");
 
-    let eredmény = match operation.trim() {
+    let eredmény: i64 = match operation.trim() {
         "+" => addition(x, y),
         "-" => subtraction(x, y),
         _=> panic!("Ismeretlen operáció!"),
