@@ -1,8 +1,10 @@
 use std::io::{self, Read};
 use crate::operations::{addition, subtraction, division, multiplication};
 
-pub fn english() {
-    println!("Type in a value for x, then for y, and finally for the operation (+, -, /, *):");
+pub fn english_main() {
+    let message: &str = "Type in a value for x, then for y, and finally for the operation (+, -, /, *):";
+
+    println!("{}", message);
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line!");
     let x: i64 = x.trim().parse().expect("Please type a number!");
@@ -29,7 +31,9 @@ pub fn english() {
 }
 
 pub fn hungary() {
-    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -, /, *):");
+    let üzenet: &str = "Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -, /, *):";
+
+    println!("{}", üzenet);
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Nem sikerült beolvasni a sort!");
     let x: i64 = x.trim().parse().expect("Egy számot adj meg!");
