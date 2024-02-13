@@ -2,7 +2,7 @@ use std::io::{self, Read};
 use crate::operations::{addition, subtraction, division, multiplication};
 
 pub fn english() {
-    println!("Type in a value for x, then for y, and finally for the operation (+, -):");
+    println!("Type in a value for x, then for y, and finally for the operation (+, -, /, *):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Failed to read line!");
     let x: i64 = x.trim().parse().expect("Please type a number!");
