@@ -1,5 +1,5 @@
 use std::io::{self, Read};
-use crate::operations::{addition, subtraction, division};
+use crate::operations::{addition, subtraction, division, multiplication};
 
 pub fn english() {
     println!("Type in a value for x, then for y, and finally for the operation (+, -):");
@@ -17,6 +17,8 @@ pub fn english() {
     let eredmény: i64 = match operation.trim() {
         "+" => addition(x, y),
         "-" => subtraction(x, y),
+        "/" => division(x, y),
+        "*" => multiplication(x, y),
         _=> panic!("Unkonwn operation!"),
     };
 
@@ -43,6 +45,7 @@ pub fn hungary() {
         "+" => addition(x, y),
         "-" => subtraction(x, y),
         "/" => division(x, y),
+        "*" => multiplication(x, y),
         _=> panic!("Ismeretlen operáció!"),
     };
 
