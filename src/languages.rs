@@ -29,7 +29,7 @@ pub fn english() {
 }
 
 pub fn hungary() {
-    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -):");
+    println!("Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -, /, *):");
     let mut x = String::new();
     io::stdin().read_line(&mut x).expect("Nem sikerült beolvasni a sort!");
     let x: i64 = x.trim().parse().expect("Egy számot adj meg!");
