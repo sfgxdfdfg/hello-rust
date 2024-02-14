@@ -30,7 +30,7 @@ pub fn english_main() {
     io::stdin().read(&mut [0]).unwrap();
 }
 
-pub fn hungary() {
+pub fn magyar() {
     let üzenet: &str = "Adj egy értéket az x-nek, majd az y-nak, végül az operációnak (+, -, /, *):";
 
     println!("{}", üzenet);
