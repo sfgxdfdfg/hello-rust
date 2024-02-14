@@ -1,6 +1,8 @@
 use std::io;
+use languages::{english_main, hungary};
+use crate::debug::debug;
 mod languages;
-use languages::{english_main, hungary, debug};
+mod debug;
 pub mod operations;
 
 fn main() {
