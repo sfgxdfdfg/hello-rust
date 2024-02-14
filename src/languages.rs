@@ -58,3 +58,8 @@ pub fn hungary() {
     println!("Nyomd meg az entert a kilépéshez!");
     io::stdin().read(&mut [0]).unwrap();
 }
+
+pub fn debug() {
+    let message = "This would be for debugging purposes!";
+    println!("{}", message);
+}
