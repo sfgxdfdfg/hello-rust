@@ -8,7 +8,7 @@ pub mod operations;
 pub fn main() {
 
     let mut language = String::new();
-    println!("Type in the language you want to use (1-english, 2-hungary, i-info_menu):");
+    println!("Type in the language you want to use (1-english, 2-magyar, i-info_menu):");
     io::stdin().read_line(&mut language).expect("Failed to read line!");
     
     match language.trim() {

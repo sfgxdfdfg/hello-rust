@@ -1,6 +1,5 @@
 use std::io::{self};
 use crate::operations::{addition, subtraction, division, multiplication};
-use crate::main;
 
 pub fn english_main() {
     let message: &str = "Type in a value for x, then for y, and finally for the operation (+, -, /, *):";
@@ -27,13 +26,13 @@ pub fn english_main() {
 
     println!("The result: {}", eredmény);
 
-    println!("Type back to go back!//Type exit to exit!");
+    println!("Type exit to exit!//Type new to start a new calculation!");
     let mut back = String::new();
     io::stdin().read_line(&mut back).expect("Failed to read line!");
 
     match back.trim() {
-        "back" => main(),
         "exit" => std::process::exit(0),
+        "new" => english_main(),
         _=> panic!("Unkonwn operation!"),
     };
 }
@@ -63,13 +62,13 @@ pub fn magyar() {
 
     println!("Az eredmény: {}", eredmény);
 
-    println!("Írd be hogy vissza a visszalépéshez!//Írd be hogy kilépés a kilépéshez!");
+    println!("Írd be hogy kilépés a kilépéshez!//Írd be hogy új az új számításhoz!");
     let mut vissza = String::new();
     io::stdin().read_line(&mut vissza).expect("Nem sikerült beolvasni a sort!");
 
     match vissza.trim() {
-        "vissza" => main(),
         "kilépés" => std::process::exit(0),
+        "új" => magyar(),
         _=> panic!("Ismeretlen operáció!"),
     };
 }
