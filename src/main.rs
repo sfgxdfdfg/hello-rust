@@ -1,6 +1,8 @@
 use std::io;
 use languages::{english_main, magyar};
 use crate::info::info;
+use crate::ui::main_ui;
+mod ui;
 mod languages;
 mod info;
 pub mod operations;
@@ -15,6 +17,7 @@ pub fn main() {
         "1" => english_main(),
         "2" => magyar(),
         "i" => info(),
+        "d" => main_ui().expect("Panic!"),
         _=> panic!("Unknown language!"),
     
     }
