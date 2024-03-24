@@ -3,14 +3,7 @@ use crate::main;
 
 pub fn info() {
 
-    println!("NOT AVAILABLE AT THE MOMENT!");                                                                                                                                                 
-
     println!("Integer types: i64");
-
-
-   
-   
-   
     println!("Type back to go back!");
 
     let mut back = String::new();
